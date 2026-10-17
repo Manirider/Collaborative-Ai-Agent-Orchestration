@@ -1,6 +1,7 @@
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 from src.api.routes import router as api_router
 from src.api.websocket import router as ws_router
 from src.observability.logging_config import setup_logging
@@ -35,6 +36,12 @@ app.include_router(api_router)
 app.include_router(ws_router)
 
 
+@app.get("/", include_in_schema=False)
+async def root():
+    return RedirectResponse(url="/docs")
+
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
+
