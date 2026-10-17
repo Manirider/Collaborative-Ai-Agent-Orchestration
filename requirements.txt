@@ -1,0 +1,35 @@
+# Web framework
+fastapi==0.115.0
+uvicorn==0.32.0
+websockets==12.0
+httpx>=0.24.0
+
+# Task queue
+celery==5.4.0
+redis==5.0.4
+
+# Database – application tables (async via asyncpg)
+sqlalchemy==2.0.34
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# Database – LangGraph checkpoint tables (sync via psycopg3)
+psycopg[binary]>=3.1.0
+psycopg-pool>=3.1.0
+
+# Schema / config
+pydantic==2.8.2
+pydantic-settings==2.3.3
+
+# LangGraph
+langgraph>=0.2.58
+langgraph-checkpoint>=2.0.0
+langgraph-checkpoint-postgres>=2.0.0
+langchain-core>=0.2.26
+
+# Utilities
+python-dotenv==1.0.1
+
+# Testing
+pytest==8.2.2
+pytest-asyncio>=0.25.0
